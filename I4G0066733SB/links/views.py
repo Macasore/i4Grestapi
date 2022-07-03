@@ -1,6 +1,27 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User
-from links.serializers import UserSerializer
-from rest_framework import generics
-from rest_framework.permissions import IsAdminUser
-# Create your views here.
+from rest_framework.generics import GenericAPIView
+from I4G0066733SB.links.serializer import LinkSerializer
+from links.models import Link
+
+class PostListApi(GenericAPIView):
+    queryset = Link.objects.filter(active=True)
+    serializer_class = LinkSerializer
+
+class PostCreateApi(GenericAPIView):
+    queryset = Link.objects.filter(active=True)
+    serializer_class = LinkSerializer
+
+class PostDetailApi(GenericAPIView):
+    queryset = Link.objects.filter(active=True)
+    serializer_class = LinkSerializer
+
+class PostUpdateApi(GenericAPIView):
+    queryset = Link.objects.filter(active=True)
+    serializer_class = LinkSerializer
+
+class PostDeleteApi(GenericAPIView):
+    queryset = Link.objects.filter(active=True)
+    serializer_class = LinkSerializer
+
+
+
